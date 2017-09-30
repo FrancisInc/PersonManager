@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PersonManager
 {
-    public partial class AddPersonForm : Form
+    public partial class EditPersonForm : Form
     {
-        public AddPersonForm()
+        public EditPersonForm()
         {
             InitializeComponent();
         }
@@ -48,7 +48,7 @@ namespace PersonManager
 
         private void nameTextBox_Leave(object sender, EventArgs e)
         {
-            if (nameTextBox.Text == "")
+            if(nameTextBox.Text == "")
             {
                 nameTextBox.Text = "Name";
                 nameTextBox.ForeColor = SystemColors.GrayText;
