@@ -50,7 +50,6 @@
     <Compile Include="AddPersonForm.Designer.cs">
       <DependentUpon>AddPersonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Phonebook.cs" />
     <Compile Include="PhonebookDisplayForm.cs">
       <SubType>Form</SubType>
     </Compile>

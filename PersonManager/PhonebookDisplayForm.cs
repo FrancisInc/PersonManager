@@ -12,9 +12,12 @@ namespace PersonManager
 {
     public partial class PhonebookDisplayForm : Form
     {
+        public List<Person> phonebook = new List<Person>();
+
         public PhonebookDisplayForm()
         {
             InitializeComponent();
+            AddPersonForm.phonebookDisplayForm = this;
         }
 
         private void newPersonToolStripMenuItem_Click(object sender, EventArgs e)
@@ -23,13 +26,14 @@ namespace PersonManager
             addPersonForm.Show();
         }
 
-        public void RefreshListView()
+        public void AddPersonToGridView(Person person)
         {
-            personListView.Items.Clear();
-            foreach(var person in Phonebook.phoneBook)
-            {
-                personListView.Items.Add(person.ToString());
-            }
+            personDataGridView.Rows.Add(person.Name, person.PhoneNumber, person.Birthday);
+        }
+
+        private void samplePersonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            personDataGridView.Rows.Add("Menu Strip", "Sample", "<3 RH");
         }
     }
 }

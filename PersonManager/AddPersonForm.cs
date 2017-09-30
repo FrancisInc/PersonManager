@@ -17,6 +17,8 @@ namespace PersonManager
             InitializeComponent();
         }
 
+        public static PhonebookDisplayForm phonebookDisplayForm;
+
         private void nameTextBox_Enter(object sender, EventArgs e)
         {
             if (nameTextBox.Text == "Name")
@@ -78,13 +80,14 @@ namespace PersonManager
 
         private void addPersonButton_Click(object sender, EventArgs e)
         {
-            Phonebook phoneBook = new Phonebook();
-            phoneBook.AddPerson(new Person() {
+            //phonebookDisplayForm.phonebook.Add();
+            phonebookDisplayForm.AddPersonToGridView(new Person()
+            {
                 Name = nameTextBox.Text,
                 PhoneNumber = phoneNumberTextBox.Text,
                 Birthday = birthdayDateTimePicker.Value,
-                AdditionalInfo = additionalInformationTextBox.Text });
-            //ActiveForm.Close();
+                AdditionalInfo = additionalInformationTextBox.Text
+            });
         }
     }
 }

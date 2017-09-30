@@ -33,8 +33,12 @@
             this.newPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newPhonebookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.savePhonebookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.personListView = new System.Windows.Forms.ListView();
+            this.personDataGridView = new System.Windows.Forms.DataGridView();
+            this.personNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personPhoneNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personBirthdayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -43,7 +47,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(641, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(654, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,27 +84,57 @@
             this.savePhonebookToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.savePhonebookToolStripMenuItem.Text = "Save Phonebook";
             // 
-            // personListView
+            // personDataGridView
             // 
-            this.personListView.Location = new System.Drawing.Point(12, 27);
-            this.personListView.Name = "personListView";
-            this.personListView.Size = new System.Drawing.Size(617, 97);
-            this.personListView.TabIndex = 1;
-            this.personListView.UseCompatibleStateImageBehavior = false;
-            this.personListView.View = System.Windows.Forms.View.List;
+            this.personDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.personDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.personDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.personDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.personDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.personDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.personDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.personDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.personNameColumn,
+            this.personPhoneNumberColumn,
+            this.personBirthdayColumn});
+            this.personDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.personDataGridView.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.personDataGridView.Location = new System.Drawing.Point(12, 27);
+            this.personDataGridView.Name = "personDataGridView";
+            this.personDataGridView.Size = new System.Drawing.Size(630, 351);
+            this.personDataGridView.TabIndex = 2;
+            // 
+            // personNameColumn
+            // 
+            this.personNameColumn.HeaderText = "Name";
+            this.personNameColumn.Name = "personNameColumn";
+            // 
+            // personPhoneNumberColumn
+            // 
+            this.personPhoneNumberColumn.HeaderText = "Phone Number";
+            this.personPhoneNumberColumn.Name = "personPhoneNumberColumn";
+            // 
+            // personBirthdayColumn
+            // 
+            this.personBirthdayColumn.HeaderText = "Birthday";
+            this.personBirthdayColumn.Name = "personBirthdayColumn";
             // 
             // PhonebookDisplayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 467);
-            this.Controls.Add(this.personListView);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(654, 467);
+            this.Controls.Add(this.personDataGridView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PhonebookDisplayForm";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,7 +147,10 @@
         private System.Windows.Forms.ToolStripMenuItem newPersonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newPhonebookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem savePhonebookToolStripMenuItem;
-        private System.Windows.Forms.ListView personListView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personPhoneNumberColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personBirthdayColumn;
+        public System.Windows.Forms.DataGridView personDataGridView;
     }
 }
 
