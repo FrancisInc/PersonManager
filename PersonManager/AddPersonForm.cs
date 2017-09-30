@@ -80,20 +80,16 @@ namespace PersonManager
 
         private void addPersonButton_Click(object sender, EventArgs e)
         {
-            phonebookDisplayForm.phonebook.Add(new Person()
+            Person person = new Person()
             {
                 Name = nameTextBox.Text,
                 PhoneNumber = phoneNumberTextBox.Text,
                 Birthday = birthdayDateTimePicker.Value,
-                AdditionalInfo = additionalInformationTextBox.Text
-            });
-            phonebookDisplayForm.AddPersonToGridView(new Person()
-            {
-                Name = nameTextBox.Text,
-                PhoneNumber = phoneNumberTextBox.Text,
-                Birthday = birthdayDateTimePicker.Value,
-                AdditionalInfo = additionalInformationTextBox.Text
-            });
+                AdditionalInfo = additionalInformationTextBox.Text,
+                ID = phonebookDisplayForm.count++
+            };
+            phonebookDisplayForm.phonebook.Add(person);
+            phonebookDisplayForm.AddPersonToGridView(person);
         }
     }
 }

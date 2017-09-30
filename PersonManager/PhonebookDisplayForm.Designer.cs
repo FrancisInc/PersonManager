@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.personDataGridView = new System.Windows.Forms.DataGridView();
-            this.personNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personPhoneNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personBirthdayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchPhonebookTextbox = new System.Windows.Forms.TextBox();
             this.addPersonButton = new System.Windows.Forms.Button();
             this.removePersonButton = new System.Windows.Forms.Button();
+            this.personNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personPhoneNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personBirthdayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.personDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,8 @@
             this.personDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.personNameColumn,
             this.personPhoneNumberColumn,
-            this.personBirthdayColumn});
+            this.personBirthdayColumn,
+            this.ID});
             this.personDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.personDataGridView.GridColor = System.Drawing.Color.WhiteSmoke;
             this.personDataGridView.Location = new System.Drawing.Point(12, 38);
@@ -60,21 +62,6 @@
             this.personDataGridView.Size = new System.Drawing.Size(630, 350);
             this.personDataGridView.TabIndex = 2;
             this.personDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.personDataGridView_CellDoubleClick);
-            // 
-            // personNameColumn
-            // 
-            this.personNameColumn.HeaderText = "Name";
-            this.personNameColumn.Name = "personNameColumn";
-            // 
-            // personPhoneNumberColumn
-            // 
-            this.personPhoneNumberColumn.HeaderText = "Phone Number";
-            this.personPhoneNumberColumn.Name = "personPhoneNumberColumn";
-            // 
-            // personBirthdayColumn
-            // 
-            this.personBirthdayColumn.HeaderText = "Birthday";
-            this.personBirthdayColumn.Name = "personBirthdayColumn";
             // 
             // searchPhonebookTextbox
             // 
@@ -116,6 +103,28 @@
             this.removePersonButton.UseVisualStyleBackColor = false;
             this.removePersonButton.Click += new System.EventHandler(this.removePersonButton_Click);
             // 
+            // personNameColumn
+            // 
+            this.personNameColumn.HeaderText = "Name";
+            this.personNameColumn.Name = "personNameColumn";
+            // 
+            // personPhoneNumberColumn
+            // 
+            this.personPhoneNumberColumn.HeaderText = "Phone Number";
+            this.personPhoneNumberColumn.Name = "personPhoneNumberColumn";
+            // 
+            // personBirthdayColumn
+            // 
+            this.personBirthdayColumn.HeaderText = "Birthday";
+            this.personBirthdayColumn.Name = "personBirthdayColumn";
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
             // PhonebookDisplayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,13 +144,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn personNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn personPhoneNumberColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn personBirthdayColumn;
         public System.Windows.Forms.DataGridView personDataGridView;
         private System.Windows.Forms.TextBox searchPhonebookTextbox;
         private System.Windows.Forms.Button addPersonButton;
         private System.Windows.Forms.Button removePersonButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personPhoneNumberColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personBirthdayColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }
 

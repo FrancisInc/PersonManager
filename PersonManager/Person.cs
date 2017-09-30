@@ -12,7 +12,8 @@ namespace PersonManager
         public string PhoneNumber { get; set; }
         public DateTime Birthday { get; set; }
         public string AdditionalInfo { get; set; }
-
+        public int ID { get; set; }
+        
         public override string ToString()
         {
             return Name;

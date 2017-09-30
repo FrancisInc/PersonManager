@@ -33,7 +33,7 @@
             this.additionalInformationTextBox = new System.Windows.Forms.TextBox();
             this.birthdayDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dateOfBirthLabel = new System.Windows.Forms.Label();
-            this.addPersonButton = new System.Windows.Forms.Button();
+            this.editPersonButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -89,19 +89,19 @@
             this.dateOfBirthLabel.TabIndex = 5;
             this.dateOfBirthLabel.Text = "Date of Birth";
             // 
-            // addPersonButton
+            // editPersonButton
             // 
-            this.addPersonButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.addPersonButton.FlatAppearance.BorderSize = 0;
-            this.addPersonButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.addPersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addPersonButton.Location = new System.Drawing.Point(12, 177);
-            this.addPersonButton.Name = "addPersonButton";
-            this.addPersonButton.Size = new System.Drawing.Size(128, 23);
-            this.addPersonButton.TabIndex = 6;
-            this.addPersonButton.Text = "Add Person";
-            this.addPersonButton.UseVisualStyleBackColor = false;
-            this.addPersonButton.Click += new System.EventHandler(this.addPersonButton_Click);
+            this.editPersonButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.editPersonButton.FlatAppearance.BorderSize = 0;
+            this.editPersonButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.editPersonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editPersonButton.Location = new System.Drawing.Point(12, 177);
+            this.editPersonButton.Name = "editPersonButton";
+            this.editPersonButton.Size = new System.Drawing.Size(128, 23);
+            this.editPersonButton.TabIndex = 6;
+            this.editPersonButton.Text = "Edit Person";
+            this.editPersonButton.UseVisualStyleBackColor = false;
+            this.editPersonButton.Click += new System.EventHandler(this.editPersonButton_Click);
             // 
             // cancelButton
             // 
@@ -117,22 +117,22 @@
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // AddPersonForm
+            // EditPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(292, 212);
             this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.addPersonButton);
+            this.Controls.Add(this.editPersonButton);
             this.Controls.Add(this.dateOfBirthLabel);
             this.Controls.Add(this.birthdayDateTimePicker);
             this.Controls.Add(this.additionalInformationTextBox);
             this.Controls.Add(this.phoneNumberTextBox);
             this.Controls.Add(this.nameTextBox);
-            this.Name = "AddPersonForm";
+            this.Name = "EditPersonForm";
             this.ShowIcon = false;
-            this.Text = "AddPersonForm";
+            this.Text = "Edit Person";
             this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,7 +146,7 @@
         private System.Windows.Forms.TextBox additionalInformationTextBox;
         private System.Windows.Forms.DateTimePicker birthdayDateTimePicker;
         private System.Windows.Forms.Label dateOfBirthLabel;
-        private System.Windows.Forms.Button addPersonButton;
+        private System.Windows.Forms.Button editPersonButton;
         private System.Windows.Forms.Button cancelButton;
     }
 }

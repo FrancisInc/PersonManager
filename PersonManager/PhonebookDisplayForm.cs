@@ -12,17 +12,20 @@ namespace PersonManager
 {
     public partial class PhonebookDisplayForm : Form
     {
-        public List<Person> phonebook = new List<Person>();
+        public List<Person> phonebook;
+        public int count = 0;
 
         public PhonebookDisplayForm()
         {
             InitializeComponent();
+            AddPersonForm.phonebookDisplayForm = this;
             EditPersonForm.phonebookDisplayForm = this;
+            phonebook = new List<Person>();
         }
         
         public void AddPersonToGridView(Person person)
         {
-            personDataGridView.Rows.Add(person.Name, person.PhoneNumber, person.Birthday);
+            personDataGridView.Rows.Add(person.Name, person.PhoneNumber, person.Birthday, person.ID);
         }
 
         public void AddPersonToPhonebook(Person person)
@@ -83,7 +86,7 @@ namespace PersonManager
 
         private void addPersonButton_Click(object sender, EventArgs e)
         {
-            EditPersonForm addPersonForm = new EditPersonForm();
+            AddPersonForm addPersonForm = new AddPersonForm();
             addPersonForm.Show();
         }
 
@@ -93,7 +96,7 @@ namespace PersonManager
             RefreshDataGridView();
         }
 
-        private void RefreshDataGridView()
+        public void RefreshDataGridView()
         {
             personDataGridView.Rows.Clear();
             for(int i = 0; i < phonebook.Count; i++)
@@ -104,7 +107,14 @@ namespace PersonManager
 
         private void personDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                new EditPersonForm(phonebook[(int)personDataGridView.Rows[e.RowIndex].Cells[3].Value]).ShowForm();
+            }
+            catch (Exception)
+            {
 
+            }
         }
     }
 }

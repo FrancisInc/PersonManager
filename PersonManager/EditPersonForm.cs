@@ -12,12 +12,29 @@ namespace PersonManager
 {
     public partial class EditPersonForm : Form
     {
+        Person person;
+
         public EditPersonForm()
         {
             InitializeComponent();
         }
 
+        public EditPersonForm(Person Person)
+        {
+            InitializeComponent();
+            person = Person;
+        }
+
         public static PhonebookDisplayForm phonebookDisplayForm;
+
+        public void ShowForm()
+        {
+            Show();
+            nameTextBox.Text = person.Name;
+            phoneNumberTextBox.Text = person.PhoneNumber;
+            birthdayDateTimePicker.Text = person.Birthday.ToString();
+            additionalInformationTextBox.Text = person.AdditionalInfo;
+        }
 
         private void nameTextBox_Enter(object sender, EventArgs e)
         {
@@ -48,7 +65,7 @@ namespace PersonManager
 
         private void nameTextBox_Leave(object sender, EventArgs e)
         {
-            if(nameTextBox.Text == "")
+            if (nameTextBox.Text == "")
             {
                 nameTextBox.Text = "Name";
                 nameTextBox.ForeColor = SystemColors.GrayText;
@@ -78,22 +95,15 @@ namespace PersonManager
             ActiveForm.Close();
         }
 
-        private void addPersonButton_Click(object sender, EventArgs e)
+        private void editPersonButton_Click(object sender, EventArgs e)
         {
-            phonebookDisplayForm.phonebook.Add(new Person()
-            {
-                Name = nameTextBox.Text,
-                PhoneNumber = phoneNumberTextBox.Text,
-                Birthday = birthdayDateTimePicker.Value,
-                AdditionalInfo = additionalInformationTextBox.Text
-            });
-            phonebookDisplayForm.AddPersonToGridView(new Person()
-            {
-                Name = nameTextBox.Text,
-                PhoneNumber = phoneNumberTextBox.Text,
-                Birthday = birthdayDateTimePicker.Value,
-                AdditionalInfo = additionalInformationTextBox.Text
-            });
+            var tempPerson = phonebookDisplayForm.phonebook[person.ID];
+            tempPerson.Name = nameTextBox.Text;
+            tempPerson.PhoneNumber = phoneNumberTextBox.Text;
+            tempPerson.Birthday = birthdayDateTimePicker.Value;
+            tempPerson.AdditionalInfo = additionalInformationTextBox.Text;
+            phonebookDisplayForm.phonebook[person.ID] = tempPerson;
+            phonebookDisplayForm.RefreshDataGridView();
         }
     }
 }
